@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pdiv {
+            background-color: lightgrey;
+            width: 300px;
+            border: 15px solid green;
+            padding: 50px;
+            margin: 20px;
+
+        }
+        .cdiv {
+            background-color: lightgrey;
+            width: 200px;
+            border: 15px solid green;
+            padding: 20px;
+            margin: 20px;
+
+
+
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1 id="box">hello i am addEventListener</h1>
+
+
+    <p id="myp" onmousedown="mouseDown()" onmouseup="mouseUp()">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit maiores ratione velit perspiciatis aut, quaerat in fuga blanditiis dolor amet facere voluptatum unde quae animi sapiente minus? Laborum, expedita. Sint.
+    </p>
+    <input  type="text" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup = 'keyUp()'>
+    <p id="keys"></p>
+
+
+    <label for=""> Your Name</label>
+    <input type="text" name = "" id = "ice">
+    <br><br>
+    <label>
+        Choose an ice cream flavor
+        <select id="iceCreams" name="iceCreams"  onchange="selectElement()">
+        <option value="">Select One</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="strawberry">Strawberry</option>
+        <option value="vanilla">Vanilla</option>
+    </select>
+    </label>
+    <br>
+    <div id="result">
+
+    </div>
+    <div>
+        <p>want to know my name</p>
+
+        <button id="btn">click here</button><br>
+        <p id="showMyName"></p>
+
+    </div>
+    <div class="pdiv" id="parentId">
+        <div class="cdiv" id="childId"></div>
+    </div>
+
+    <script>
+
+
+        const parentId = document.getElementById('parentId');
+        const childId = document.getElementById('childId');
+
+        const parentCall = () => {
+            alert('parent div call');
+
+        }
+
+        const childCall = () => {
+            alert('child div call');
+            event.stopPropagation();
+        }
+
+        parentId.addEventListener('click', parentCall, true);
+        childId.addEventListener('click', childCall, true);
+
+
+    // javascript Timing events
+    //setTimeout() executes a function after waiting a specified number of milliseconds.
+    // setInterval() is
+    // same as setTimeout() but repeats the
+    // execution of the function continuously.(live Time)
+
+    const myName = document.querySelector('#showMyName');
+    const btn = document.querySelector('#btn')
+        const showMyName = () => {
+            myName.innerHTML = 'Loading..'
+            setTimeout(() => {
+                myName.innerHTML = 'shiva panday'
+            }, 1000)
+        }
+    btn.addEventListener('click', showMyName);
+
+
+        // MOUSE EVENT.
+        const mEnter = document.getElementById('box')
+        function mouseDown(){
+            document.getElementById('myp').style.color = '#0000FF';
+        }
+
+        function mouseUp(){
+            document.getElementById('myp').style.color="#ff0000";
+        }
+
+           const  mouseEnter = document.getElementById('box');
+           mouseEnter.addEventListener('mouseenter', () => {
+               mouseEnter.style.backgroundColor = 'red';
+               console.log('mouse enter bro')
+           })
+
+           mouseEnter.addEventListener('mouseleave', () => {
+               console.log('mouse leave bro');
+               mouseEnter.style.backgroundColor= 'pink'
+           })
+
+           // KEYWORD EVENT
+           //const keyPress = () => {
+             //  document.getElementById('keys').innerHTML= `you press ${event.key} and it's code is ${event.code}.`
+           //}
+
+          // const keyDown = () => {
+            //   document.getElementById('keys').innerHTML = 'key is down'
+           //}
+
+           //const keyUp = () => {
+              // document.getElementById('keys').innerHTML= 'key is up';
+           //}
+
+
+    // INPUT EVENTS
+    const selectElement = () => {
+        const inputChange = document.getElementById('ice').value;
+        const iceCreams = document.getElementById('iceCreams').value;
+        const result = document.getElementById('result');
+        result.innerHTML = `MR ${inputChange} select ${iceCreams} ice-cream flavour`
+        console.log(`${inputChange} and ${iceCreams}`)
+
+    }
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
