@@ -591,6 +591,13 @@
 // })
 // console.log(flatArray);
 
+// const arr = [
+//     [1, 2, 3, 4],
+//     [5, 6, 7],
+//     [8, 9, [10, 11]]
+// ]
+// console.log(arr.flat(Infinity));
+
 // // STRING
 // let name = 'samjhana';
 
@@ -621,7 +628,7 @@
 
 // SLICE METHOD.
 
-//  let str = "Apple, banana, kiwi";
+// let str = "Apple, banana, kiwi";
 // let res = str.slice(1, -3);  // first argument remove from starting and second argument(-) will remove from last -3 will remove 'iwi'.
 // let res = str.slice(0, 5); // This will give you from index 0 to index 4.(5 character).
 // let res = str.slice(7); // This will remove before index 7 and give you all after index 7(banana, kiwi)
@@ -783,3 +790,5 @@
 // IT WILL RETURNS BEFORE DECIMAL
 // console.log(Math.trunc(4,6));
 // console.log(Math.trunc(-99.33));
+
+

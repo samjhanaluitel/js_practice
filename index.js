@@ -19,12 +19,12 @@
 // let y = 200;
 // console.log(y);
 
-let person = {
-    name: 'ram',
-    age: 5
-}
+// let person = {
+//     name: 'ram',
+//     age: 5
+// }
 
-let fruits = ['apple', 'orange', 'cherry']
+// let fruits = ['apple', 'orange', 'cherry']
 
 // function person1(){
 
@@ -61,6 +61,7 @@ let fruits = ['apple', 'orange', 'cherry']
 //     document.getElementById('demo').innerHTML= Date();
 // }
 
-let fruit = ['cherry', 'plum', 'pear'];
-fruit[0] = 'peach';
-console.log(fruit);
+// let fruit = ['cherry', 'plum', 'pear'];
+// fruit[0] = 'peach';
+// console.log(fruit);
+
